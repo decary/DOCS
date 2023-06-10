@@ -1,0 +1,51 @@
+#include<iostream>
+#include<graphics.h>
+#include<math.h>
+
+
+void man()
+{    
+int i,j,x,y,getmaxx();
+    for(i=0;i<getmaxx()-140;i++)
+    {
+    	delay(10);
+    cleardevice();
+    
+    line(0,450,getmaxx(),450);
+    rectangle(10+i,400,50+i,320);
+    line(15+i,450,40+i,400);
+    line(40+i,450,15+i,400);
+    circle(30+i,310,10);
+    line(40+i,370,60+i,350);
+    line(60+i,355,60+i,270);
+    line(45+i,340,70+i,290);
+    line(0+i,280,140+i,280);
+    arc(70+i,280,0,180,70);
+    for(j=0;j<100;j++)
+    {
+    
+        x=rand()%getmaxx();
+        y=rand()%getmaxy();
+       // outtextxy(x,y,"\\");
+       line(x,y,x+4,y+4);
+       
+        
+         
+    
+    }
+    x=0;y=0;
+    delay(50);
+	}
+}
+
+int main()
+{
+ int gd=DETECT, gm;
+    initgraph(&gd,&gm,NULL);
+    man();
+    
+    delay(10000);
+    closegraph();
+    return 0;
+   
+   }
